@@ -1,0 +1,95 @@
+@import "@/app/common-variables.scss";
+
+.explore {
+  &__wrapper {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    border-bottom: 3px dotted $color-gray-1;
+  }
+
+  &__main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__left {
+    h2 {
+      color: $color-dark-1;
+      font-size: 34px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 14px;
+      color: $color-gray-4;
+      font-weight: 500;
+      margin-top: 25px;
+      line-height: 25px;
+    }
+
+    &-quote {
+      color: $color-dark-1;
+      font-size: 14px;
+      font-style: italic;
+      font-weight: 500;
+      margin-top: 25px;
+      line-height: 25px;
+      svg {
+        width: 32px;
+        height: 32px;
+        margin-right: 4px;
+      }
+    }
+  }
+
+  &__btn-wrapper {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  &__right-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: 100%;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  &__item-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    &__main-container {
+      flex-direction: row;
+      padding: 0 32px;
+      margin: 0 auto;
+    }
+
+    &__left {
+      flex: 1;
+      padding-right: 15px;
+    }
+
+    &__right {
+      flex: 1;
+    }
+
+    &__item {
+      flex-basis: 50%;
+      padding: 10px;
+    }
+
+    &__btn-wrapper {
+      margin-top: 25px;
+      margin-bottom: 0;
+    }
+  }
+}

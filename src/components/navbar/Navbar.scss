@@ -1,0 +1,130 @@
+@import "@/app/common-variables.scss";
+
+.sc-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.25);
+  z-index: 999;
+
+  & + main {
+    margin-top: 100px;
+  }
+
+  &__container {
+    max-width: 1404px;
+    margin: auto;
+  }
+
+  &__logoImg {
+    width: auto;
+    height: 59px;
+    object-fit: cover;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-gray-3;
+    padding: 0 10px;
+
+    &-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 15px 0;
+    }
+  }
+
+  &__menu-icons {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: 10px;
+  }
+  &__menu-icons-hamburger {
+    cursor: pointer;
+  }
+
+  &__menu-last-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__menu {
+    // position: absolute;
+    // top: 80px;
+    // left: 0;
+    // padding: 0 10px;
+    // width: 100%;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      width: 100%;
+      font-size: 1rem;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    li {
+      padding: 10px 20px;
+    }
+    li.active {
+      background-color: $color-dark-1;
+      color: $color-white;
+      border-radius: 10px;
+    }
+  }
+
+  &__mobile-menu {
+    display: flex;
+  }
+  &__desktop-menu {
+    display: none;
+  }
+
+  // Responsive design
+  @media (min-width: 768px) {
+    &__mobile-menu {
+      display: none;
+    }
+    &__desktop-menu {
+      display: flex;
+    }
+
+    &__menu-icons-hamburger {
+      display: none;
+    }
+
+    &__nav-row {
+      padding: 0 32px;
+    }
+    &__logoImg {
+      margin: 0;
+    }
+
+    &__menu {
+      position: relative;
+      top: unset;
+      padding: unset;
+      flex: 1;
+      ul {
+        flex-direction: row;
+        justify-content: flex-end;
+        background-color: unset;
+        margin-bottom: 0;
+      }
+    }
+    &__nav-row {
+      gap: 15px;
+    }
+  }
+}
